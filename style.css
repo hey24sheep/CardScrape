@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #202128;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: white !important;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    background-color: #e0e0e02d;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+    width: 45%;
+    max-width: 45%;
+    height: calc(100vh - 180px);
+}
+
+.github-fork-ribbon:before {
+    background: #5f7cce !important;
+}
+
+.header {
+    font-size: 24px !important;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    user-select: none;
+}
+
+.jsonContainer {
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.copy-status {
+    margin-bottom: 4px;
+}

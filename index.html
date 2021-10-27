@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wikipedia IIN to JSON</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+</head>
+
+<body flex onload="scrapeAndProcess()">
+    <a class="github-fork-ribbon" target="_blank" href="https://github.com/hey24sheep/CardScrape"
+        data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div class="header">
+        <span>Tool to convert </span>
+        <a target="_blank"
+            href="https://en.wikipedia.org/wiki/Payment_card_number#Issuer_identification_number_%28IIN%29">
+            "Issuer
+            identification number (IIN)" data table
+        </a>
+        <span> to JSON</span>
+    </div>
+
+    <div class="jsonContainer">
+        <pre id="cardsInfoJson" onclick="copyToClipboard(event, cardsJson)"></pre>
+        <pre id="providerListJson" onclick="copyToClipboard(event, providersJson)"></pre>
+    </div>
+    <p class="copy-status"><small id="copy-status">Click the JSON to copy</small></p>
+
+    <!-- scripts-->
+    <script src="//unpkg.com/cross-fetch/dist/cross-fetch.js"></script>
+
+    <script src="./external.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

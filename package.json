@@ -1,0 +1,35 @@
+{
+  "name": "cardscrape",
+  "version": "1.0.0",
+  "description": "VanillaJS tool to convert Wikipedia \"Issuer identification number (IIN)\" data table to JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hey24sheep/CardScrape.git"
+  },
+  "keywords": [
+    "vanillajs",
+    "js",
+    "tool",
+    "credit card",
+    "IIN",
+    "issuer identfication number",
+    "scraper",
+    "javascript",
+    "js scraper",
+    "wiki",
+    "wikipedia iin",
+    "json",
+    "html to json"
+  ],
+  "author": "Heyramb Narayan Goyal (https://hey24sheep.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hey24sheep/CardScrape/issues"
+  },
+  "homepage": "https://github.com/hey24sheep/CardScrape#readme",
+  "dependencies": {}
+}
