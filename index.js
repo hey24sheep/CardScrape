@@ -12,7 +12,13 @@ scrapeAndProcess();
 // 0 = main, 1 = cards, 2 = providers
 function scrapeAndProcess(am = 0) {
     apiMode = am;
-    return fetch("https://en.wikipedia.org/wiki/Payment_card_number")
+    return fetch("https://en.wikipedia.org/wiki/Payment_card_number?origin=*", {
+        method: "GET",
+        mode: 'cors', // no-cors, *cors, same-origin
+        headers: {
+            "Origin": "*",
+        },
+    })
         .then(async (res) => {
             var htmlDoc = await responseToHTMLDocument(res);
             var table = findAndGetTable(htmlDoc);
