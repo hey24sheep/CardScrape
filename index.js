@@ -7,11 +7,12 @@
 let cardsJson = null;
 let providersJson = null;
 let apiMode = 0;
+const wikiPage = "https://en.wikipedia.org/wiki/Payment_card_number";
 
 // 0 = main, 1 = cards, 2 = providers
 function scrapeAndProcess(am = 0) {
     apiMode = am;
-    return fetch("https://en.wikipedia.org/wiki/Payment_card_number", {
+    return fetch("https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Payment_card_number&prop=text&formatversion=2", {
         method: "GET",
     })
         .then(async (res) => {
@@ -20,7 +21,7 @@ function scrapeAndProcess(am = 0) {
 
             if (!table.rows) {
                 console.log("error : table not found on wikipedia");
-                alert("Table not found on Wikipedia!! Report the issue on Github");
+                document.getElementById("cardsInfoJson").innerText = "Table not found on Wikipedia!! Report the issue on Github";
             } else {
                 processTable(table);
             }
@@ -40,12 +41,14 @@ function scrapeAndProcess(am = 0) {
         })
         .catch((err) => {
             console.log("error ", err);
-            alert("Something went wrong!! Report the issue on Github");
+            document.getElementById("cardsInfoJson").innerText = "Table not found on Wikipedia!! Report the issue on Github";
         });
 }
 
 async function responseToHTMLDocument(res) {
-    var rawHtml = await res.text();
+    var resText = await res.text();
+    var jsonHtml = JSON.parse(resText);
+    var rawHtml = jsonHtml.parse.text;
     var htmlDoc = new DOMParser().parseFromString(rawHtml, "text/html");
     return htmlDoc;
 }
